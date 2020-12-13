@@ -1,2 +1,2 @@
 @echo off
-start AutoHotKey.exe SnapWindow.ahk
+start bin/AutoHotKey.exe SnapWindow.ahk
