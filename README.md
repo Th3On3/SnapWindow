@@ -12,9 +12,9 @@ This software is based on [AutoHotKey](https://www.autohotkey.com/) and AutoHotK
 
 * Multi monitor support  
 * Transparecy  
-* Resize  
+* Resizing  
 * Fullscreen toggle  
-* Target other window  
+* Targeting other window  
 * Etc.  
 
 ## 4. Help
