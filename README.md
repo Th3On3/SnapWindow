@@ -19,16 +19,16 @@ This software is based on [AutoHotKey](https://www.autohotkey.com/) and AutoHotK
 
 ## 4. Help
 
-??* CTRL+SHIFT+u -  Top Left  
-??* CTRL+SHIFT+j -  Bottom Left  
-??* CTRL+SHIFT+i -  Top Right  
-??* CTRL+SHIFT+k -  Bottom Right  
-??* CTRL+SHIFT+o -  Target window  
-??* CTRL+SHIFT+s -  Size  
-??* CTRL+SHIFT+t -  Transparecy  
-??* CTRL+SHIFT+f -  Toggle fullscreen  
-??* CTRL+SHIFT+h -  Help  
-??* CTRL+SHIFT+x -  Exit  
+..* CTRL+SHIFT+u -  Top Left  
+..* CTRL+SHIFT+j -  Bottom Left  
+..* CTRL+SHIFT+i -  Top Right  
+..* CTRL+SHIFT+k -  Bottom Right  
+..* CTRL+SHIFT+o -  Target window  
+..* CTRL+SHIFT+s -  Size  
+..* CTRL+SHIFT+t -  Transparecy  
+..* CTRL+SHIFT+f -  Toggle fullscreen  
+..* CTRL+SHIFT+h -  Help  
+..* CTRL+SHIFT+x -  Exit  
 
 ## 5. Donate and pay me a beer
 
