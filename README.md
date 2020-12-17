@@ -2,38 +2,56 @@
 
 ## 1. About
 
-Already happened to you that you needed to put [Kodi](https://kodi.tv/) or [VLC](https://www.videolan.org/) in a small snapped window always on top while you are working or doing other stuff, well then you don't need to wait more, you can use SnapWindow.
+Already happened to you that you needed [Kodi](https://kodi.tv/) or [VLC](https://www.videolan.org/) in a small snapped window always on top while you are working or doing other stuff, well then you don't need to wait more, you can use SnapWindow.
 
 ## 2. AutoHotKey
 
-This software is based on [AutoHotKey](https://www.autohotkey.com/) and AutoHotKey.exe must be on your $PATH or in the bin directory.
+This software was developed with [AutoHotKey](https://www.autohotkey.com/) and AutoHotKey.exe must be on your $PATH or in the bin directory.
 
-## 3. Features
+## 3. Screenshots
 
-* Multi monitor support  
-* Transparecy  
-* Resizing  
-* Fullscreen toggle  
-* Targeting other window  
-* Etc.  
+- SnapWindow in action:
 
-## 4. Help
+![SnapWindow in action](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen1.png?raw=true)
 
-* CTRL+SHIFT+u -  Top Left  
-* CTRL+SHIFT+j -  Bottom Left  
-* CTRL+SHIFT+i -  Top Right  
-* CTRL+SHIFT+k -  Bottom Right  
-* CTRL+SHIFT+o -  Target window  
-* CTRL+SHIFT+s -  Size  
-* CTRL+SHIFT+t -  Transparecy  
-* CTRL+SHIFT+f -  Toggle fullscreen  
-* CTRL+SHIFT+h -  Help  
-* CTRL+SHIFT+x -  Exit  
+- Select another window:
 
-## 5. Donate and pay me a beer
+![Select another window](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen2.png?raw=true)
+
+- Change transparecy:
+
+![Change transparecy](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen3.png?raw=true)
+
+- Change size:
+
+![Change size](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen4.png?raw=true)
+
+## 4. Features
+
+- Multimonitor support
+- Transparecy
+- Resizing
+- Fullscreen toggle
+- Targeting other window
+- Etc.
+
+## 5. Help
+
+- CTRL+SHIFT+u - Top Left
+- CTRL+SHIFT+j - Bottom Left
+- CTRL+SHIFT+i - Top Right
+- CTRL+SHIFT+k - Bottom Right
+- CTRL+SHIFT+o - Target window
+- CTRL+SHIFT+s - Size
+- CTRL+SHIFT+t - Transparecy
+- CTRL+SHIFT+f - Toggle fullscreen
+- CTRL+SHIFT+h - Help
+- CTRL+SHIFT+x - Exit
+
+## 6. Donate and pay me a beer
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?cmd=_donations&business=fmfrodrigues@gmail.com&currency_code=EUR)
 
 ![paypal](https://github.com/Th3On3/SnapWindow/blob/main/resources/paypal.png?raw=true)
 
-## 6. Enjoy
+## 7. Enjoy
