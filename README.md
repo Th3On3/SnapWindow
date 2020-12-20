@@ -12,23 +12,23 @@ This software was developed with [AutoHotKey](https://www.autohotkey.com/) and A
 
 - SnapWindow in action:
 
-[ ![SnapWindow in action](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen1.png?raw=true =1000x546) ](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen1.png?raw=true)
+![SnapWindow in action](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen1.png?raw=true)
 
 - Select another window:
 
-[ ![Select another window](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen2.png?raw=true =1000x546) ](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen2.png?raw=true)
+![Select another window](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen2.png?raw=true)
 
 - Change transparecy:
 
-[ ![Change transparecy](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen3.png?raw=true =1000x546) ](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen3.png?raw=true)
+![Change transparecy](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen3.png?raw=true)
 
 - Change size:
 
-[ ![Change size](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen4.png?raw=true =1000x546) ](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen4.png?raw=true)
+![Change size](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen4.png?raw=true)
 
 - Open Youtube link on VLC:
 
-[ ![Open Youtube link on VLC](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen5.png?raw=true =1000x546) ](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen5.png?raw=true)
+![Open Youtube link on VLC](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen5.png?raw=true)
 
 ## 4. Features
 
