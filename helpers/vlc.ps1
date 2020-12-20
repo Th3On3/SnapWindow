@@ -23,24 +23,31 @@ catch [System.Management.Automation.ActionPreferenceStopException] {
 }
 
 
-try {
-    $path = (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC*').InstallLocation
-} 
-catch {
+$path = $null
+$path = (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC*').InstallLocation
+
+if ($path -eq $null) {
     $path = (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC.Universal*').InstallLocation
 }
 
+if ($path -eq $null) {
+    $path = (Get-CimInstance -ClassName Win32_Product | Where-Object Name -Like "*vlc*").InstallLocation
+}
+
+if ($path -eq $null) {
+    $path = (Get-CimInstance -ClassName Win32_Product | Where-Object Name -Like "*VLC.Universal*").InstallLocation
+}
 
 $VLCAPP = Get-AppxPackage -Name "VideoLAN.VLC" | Select-Object -ExpandProperty PackageFamilyName -First 1
 
 try {
-    Start-Process -FilePath $path\vlc.exe -ArgumentList $args[0], '--preferred-resolution=-1', '--extraintf rc', '--rc-host localhost:8889', '--rc-quiet', '--qt-minimal-view','--no-qt-video-autoresize'
+    Start-Process -FilePath $path\vlc.exe -ArgumentList $args[0], '--preferred-resolution=-1', '--extraintf rc', '--rc-host localhost:8889', '--rc-quiet', '--qt-minimal-view', '--no-qt-video-autoresize'
 }
 catch {
     try {
-        Start-Process -FilePath $path\VideoLAN\VLC\vlc.exe -ArgumentList $args[0], '--preferred-resolution=-1', '--extraintf rc', '--rc-host localhost:8889', '--rc-quiet', '--qt-minimal-view','--no-qt-video-autoresize'
+        Start-Process -FilePath $path\VideoLAN\VLC\vlc.exe -ArgumentList $args[0], '--preferred-resolution=-1', '--extraintf rc', '--rc-host localhost:8889', '--rc-quiet', '--qt-minimal-view', '--no-qt-video-autoresize'
     }
     catch {
-        Start-Process -FilePath shell:appsFolder\$VLCAPP!App -ArgumentList $args[0], '--preferred-resolution=-1', '--extraintf rc', '--rc-host localhost:8889', '--rc-quiet', '--qt-minimal-view','--no-qt-video-autoresize'
+        Start-Process -FilePath shell:appsFolder\$VLCAPP!App -ArgumentList $args[0], '--preferred-resolution=-1', '--extraintf rc', '--rc-host localhost:8889', '--rc-quiet', '--qt-minimal-view', '--no-qt-video-autoresize'
     }
 }
