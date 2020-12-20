@@ -22,7 +22,9 @@ Fullscreen := false
 SnapWindowTitle := "SnapWindow - Select window"
 SnapWindowTransparecyTitle := "SnapWindow - Change transparecy"
 SnapWindowSizeTitle := "SnapWindow - Change size"
+SnapWindowOpenURLTitle := "SnapWindow - Enter URL"
 SnapWindowAppName := "SnapWindow"
+VLC := false
 
 SplashGUI(Pic, X, Y, TimeOn, Alpha = false)
 {
@@ -161,6 +163,11 @@ GetTitlebarStatus()
 		return 1
 }
 
+WScript(Script, WorkingDir := "", Options := "", Params := "")
+{
+    Run % "wscript.exe " . Script . " " . Params . " ", % WorkingDir == "" ? A_ScriptDir : WorkingDir, % Options, PID
+    Return PID
+}
 Intro()
 nWindow := "Kodi"
 if A_args[1]
@@ -176,16 +183,17 @@ Loop, %window_%
 	if (title = nWindow)
 	{
 		flag := 1
+		WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
+		WinGetPos, StartX, StartY, StartWidth, StartHeight, ahk_id %winHandle%
+		StartAspectRatio := StartWidth / StartHeight
+		WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 	}
 }
 if (flag = 0)
 {
-	Gosub ^+o
+	Gosub ^+v
 }
-WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
-WinGetPos, StartX, StartY, StartWidth, StartHeight, ahk_id %winHandle%
-StartAspectRatio := StartWidth / StartHeight
-WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
+
 
 ^+u:: ;Topleft
 	SetTitleMatchMode, 2
@@ -454,6 +462,13 @@ WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 	{
 		Gui,Destroy
 	}
+	SetTitleMatchMode, 2
+	winHandle5 := WinExist(SnapWindowOpenURLTitle)
+	WinGetTitle, tWindow5, ahk_id %winHandle5%
+	IfWinExist %tWindow5%
+	{
+		Gui,Destroy
+	}
 	transparecy := (TransparecyLevel/255)*100
 	Gui, Add, Slider, w500 vSlider gMySlider2 ToolTip, %transparecy%
 	Gui, Add, Button, Default w50 gMySlider1, OK
@@ -498,6 +513,13 @@ WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 	{
 		Gui,Destroy
 	}
+	SetTitleMatchMode, 2
+	winHandle5 := WinExist(SnapWindowOpenURLTitle)
+	WinGetTitle, tWindow5, ahk_id %winHandle5%
+	IfWinExist %tWindow5%
+	{
+		Gui,Destroy
+	}
 	winlist:=[]
 	WinGet, Win, List
 	Loop, %window_%
@@ -516,15 +538,17 @@ WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 
 	WinTitle:
 		Gui,Submit
-		if (title != nWindow)
-		{
-			TransparecyLevel := 255
-			WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
-			WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
-		}
 		nWindow := title
 		winHandle := WinExist(nWindow)
+		if (GetTitlebarStatus()=0)
+		{
+			WinSet, Style, ^0xC00000, ahk_id %winHandle% ; toggle title bar
+		}
+		TransparecyLevel := 255
 		WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
+		WinGetPos, StartX, StartY, StartWidth, StartHeight, ahk_id %winHandle%
+		StartAspectRatio := StartWidth / StartHeight
+		WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 		Gui,Destroy
 		return
 	GuiClose:
@@ -549,6 +573,13 @@ WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 	winHandle4 := WinExist(SnapWindowSizeTitle)
 	WinGetTitle, tWindow4, ahk_id %winHandle4%
 	IfWinExist %tWindow4%
+	{
+		Gui,Destroy
+	}
+	SetTitleMatchMode, 2
+	winHandle5 := WinExist(SnapWindowOpenURLTitle)
+	WinGetTitle, tWindow5, ahk_id %winHandle5%
+	IfWinExist %tWindow5%
 	{
 		Gui,Destroy
 	}
@@ -696,10 +727,82 @@ WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
 		Fullscreen := false
 	}
 	return
+^+v:: ;Open VLC
+	WScript("launcher.js","./helpers/","","./vlc_init.ps1")
+	SetTimer, TestVLC, 1000
+	return
+	TestVLC:
+		WinGet, Win, List
+		Loop, %window_%
+		{
+			ID := Win%A_Index%
+			WinGetTitle, Title, % "ahk_id " ID
+			IfEqual, Title,, Continue
+			if (RegExMatch(Title, "VLC") != 0)
+			{
+				nWindow := title
+				winHandle := WinExist(nWindow)
+				if (GetTitlebarStatus()=0)
+				{
+					WinSet, Style, ^0xC00000, ahk_id %winHandle% ; toggle title bar
+				}
+				TransparecyLevel := 255
+				WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
+				WinGetPos, StartX, StartY, StartWidth, StartHeight, ahk_id %winHandle%
+				StartAspectRatio := StartWidth / StartHeight
+				WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
+				VLC := true
+				SetTimer, TestVLC, Off
+			}
+		}
+		return
+^+b:: ;Open Youtube link on VLC
+	if (VLC = false)
+	{
+		Gosub ^+v
+	}
+	SetTitleMatchMode, 2
+	winHandle2 := WinExist(SnapWindowTitle)
+	WinGetTitle, tWindow2, ahk_id %winHandle2%
+	IfWinExist %tWindow2%
+	{
+		Gui,Destroy
+	}
+	SetTitleMatchMode, 2
+	winHandle3 := WinExist(SnapWindowTransparecyTitle)
+	WinGetTitle, tWindow3, ahk_id %winHandle3%
+	IfWinExist %tWindow3%
+	{
+		Gui,Destroy
+	}
+	SetTitleMatchMode, 2
+	winHandle4 := WinExist(SnapWindowSizeTitle)
+	WinGetTitle, tWindow4, ahk_id %winHandle4%
+	IfWinExist %tWindow4%
+	{
+		Gui,Destroy
+	}
+	SetTitleMatchMode, 2
+	winHandle5 := WinExist(SnapWindowOpenURLTitle)
+	WinGetTitle, tWindow5, ahk_id %winHandle5%
+	IfWinExist %tWindow5%
+	{
+		Gui,Destroy
+	}
+	Gui, Add, Edit, w300 vMyURL, URL
+	Gui, Add, Button, Default w50 gMyEdit, Ok
+	Gui, Show,, %SnapWindowOpenURLTitle%
+	return
+	MyEdit:
+		Gui,Submit
+		WScript("launcher.js","./helpers/","","./vlc_send_cmd.ps1 add " . MyURL)
+		WScript("launcher.js","./helpers/","","./vlc_send_cmd.ps1 next")
+		Gui,Destroy
+		return
+	
 ^+h:: ;Help
 	HelpBox()
 	return
-
 ^+x:: ;Exit
 	winHandle := WinExist(nWindow)
 	WinSet, Style, ^0xC00000, ahk_id %winHandle% ; toggle title bar

@@ -1,5 +1,7 @@
 # SnapWindow
 
+![SnapWindow](https://github.com/Th3On3/SnapWindow/blob/main/resources/splash.png?raw=true)
+
 ## 1. About
 
 Already happened to you that you needed [Kodi](https://kodi.tv/) or [VLC](https://www.videolan.org/) in a small snapped window always on top while you are working or doing other stuff, well then you don't need to wait more, you can use SnapWindow.
@@ -26,6 +28,10 @@ This software was developed with [AutoHotKey](https://www.autohotkey.com/) and A
 
 ![Change size](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen4.png?raw=true)
 
+- Open Youtube link on VLC:
+
+![Open Youtube link on VLC](https://github.com/Th3On3/SnapWindow/blob/main/resources/screen5.png?raw=true)
+
 ## 4. Features
 
 - Multimonitor support
@@ -33,6 +39,7 @@ This software was developed with [AutoHotKey](https://www.autohotkey.com/) and A
 - Resizing
 - Fullscreen toggle
 - Targeting other window
+- Open Youtube link on VLC
 - Etc.
 
 ## 5. Help
@@ -45,6 +52,8 @@ This software was developed with [AutoHotKey](https://www.autohotkey.com/) and A
 - CTRL+SHIFT+s - Size
 - CTRL+SHIFT+t - Transparecy
 - CTRL+SHIFT+f - Toggle fullscreen
+- CTRL+SHIFT+v - Open VLC
+- CTRL+SHIFT+b - Open Youtube link on VLC
 - CTRL+SHIFT+h - Help
 - CTRL+SHIFT+x - Exit
 

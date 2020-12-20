@@ -7,34 +7,34 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="help.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="help.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="150.68841"
-     inkscape:cy="466.3961"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
+     inkscape:window-maximized="1"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="466.3961"
+     inkscape:cx="150.68841"
+     inkscape:zoom="0.7"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -43,90 +43,100 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Camada 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Camada 1">
     <g
-       id="g896">
+       id="g879">
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.301786;stroke-opacity:1"
+         y="18.172014"
+         x="48.410114"
+         height="77.426811"
+         width="107.28693"
          id="rect846"
-         width="107.30804"
-         height="67.620537"
-         x="48.399559"
-         y="18.161459" />
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.322896;stroke-opacity:1" />
       <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="91.470238"
+         id="text850"
          y="27.97024"
-         id="text850"><tspan
-           sodipodi:role="line"
-           id="tspan848"
-           x="91.470238"
+         x="91.470238"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.264583"
            y="27.97024"
-           style="stroke-width:0.264583">HELP</tspan></text>
+           x="91.470238"
+           id="tspan848"
+           sodipodi:role="line">HELP</tspan></text>
       <text
-         xml:space="preserve"
-         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-         x="69.16964"
+         id="text854"
          y="35.151787"
-         id="text854"><tspan
-           sodipodi:role="line"
-           x="69.16964"
+         x="54.352959"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           id="tspan856"
+           style="stroke-width:0.264583"
            y="35.151787"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+u -  Top Left</tspan><tspan
+           id="tspan862"
            style="stroke-width:0.264583"
-           id="tspan856">CTRL+SHIFT+u -  Top Left</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
            y="40.443451"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+j -   Bottom Left</tspan><tspan
+           id="tspan864"
            style="stroke-width:0.264583"
-           id="tspan862">CTRL+SHIFT+j -   Bottom Left</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
            y="45.735111"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+i -   Top Right</tspan><tspan
+           id="tspan868"
            style="stroke-width:0.264583"
-           id="tspan864">CTRL+SHIFT+i -   Top Right</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
            y="51.026775"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+k -  Bottom Right</tspan><tspan
+           id="tspan870"
            style="stroke-width:0.264583"
-           id="tspan868">CTRL+SHIFT+k -  Bottom Right</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
            y="56.318436"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+o -  Target window</tspan><tspan
+           id="tspan872"
            style="stroke-width:0.264583"
-           id="tspan870">CTRL+SHIFT+o -  Target window</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
            y="61.6101"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+s -  Size</tspan><tspan
+           id="tspan874"
            style="stroke-width:0.264583"
-           id="tspan872">CTRL+SHIFT+s -  Size</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
-           y="66.901756"
+           y="66.901764"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+t -  Transparecy</tspan><tspan
+           id="tspan876"
            style="stroke-width:0.264583"
-           id="tspan874">CTRL+SHIFT+t -  Transparecy</tspan><tspan
-           sodipodi:role="line"
-           x="69.16964"
            y="72.19342"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+f -  Toggle fullscreen</tspan><tspan
            style="stroke-width:0.264583"
-           id="tspan876">CTRL+SHIFT+f -  Toggle fullscreen</tspan><tspan
+           y="77.485085"
+           x="54.352959"
            sodipodi:role="line"
-           x="69.16964"
-           y="77.485077"
+           id="tspan859">CTRL+SHIFT+v -  Open VLC</tspan><tspan
            style="stroke-width:0.264583"
-           id="tspan880">CTRL+SHIFT+h-   Help</tspan><tspan
+           y="82.776749"
+           x="54.352959"
            sodipodi:role="line"
-           x="69.16964"
-           y="82.776741"
+           id="tspan861">CTRL+SHIFT+b -  Open Youtube link on VLC</tspan><tspan
+           id="tspan880"
            style="stroke-width:0.264583"
-           id="tspan878">CTRL+SHIFT+x -  Exit</tspan></text>
+           y="88.068405"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+h-   Help</tspan><tspan
+           id="tspan878"
+           style="stroke-width:0.264583"
+           y="93.360069"
+           x="54.352959"
+           sodipodi:role="line">CTRL+SHIFT+x -  Exit</tspan></text>
     </g>
   </g>
 </svg>
