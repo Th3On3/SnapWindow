@@ -1,5 +1,3 @@
-# SnapWindow
-
 ![SnapWindow](https://github.com/Th3On3/SnapWindow/blob/main/resources/splash.png?raw=true)
 
 ## 1. About
