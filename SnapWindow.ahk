@@ -140,9 +140,11 @@ SetIconContextMenu()
 	Menu, Tray, Click, 1 ;Remove this line to require double click
 	Return
 	Help:
+		DestroyAllGUIs()
 		HelpBox()
 		return
 	About:
+		DestroyAllGUIs()
 		AboutBox()
 		return
 	Exit:
@@ -168,6 +170,32 @@ WScript(Script, WorkingDir := "", Options := "", Params := "")
     Run % "wscript.exe " . Script . " " . Params . " ", % WorkingDir == "" ? A_ScriptDir : WorkingDir, % Options, PID
     Return PID
 }
+
+DestroyGUI(title)
+{
+	SetTitleMatchMode, 2
+	winHandle := WinExist(title)
+	WinGetTitle, tWindow, ahk_id %winHandle%
+	IfWinExist %tWindow%
+	{
+		Gui,Destroy
+	}
+	return
+}
+
+DestroyAllGUI(Windows*)
+{
+	for index,Window in Windows
+        DestroyGUI(Window)
+	return
+}
+
+DestroyAllGUIs()
+{
+	global
+	DestroyAllGUI(SnapWindowTitle,SnapWindowTransparecyTitle,SnapWindowSizeTitle,SnapWindowOpenURLTitle)
+}
+
 Intro()
 nWindow := "Kodi"
 if A_args[1]
@@ -186,7 +214,7 @@ Loop, %window_%
 		WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
 		WinGetPos, StartX, StartY, StartWidth, StartHeight, ahk_id %winHandle%
 		StartAspectRatio := StartWidth / StartHeight
-		WinSet, Transparent, 255, ahk_id %winHandle% ; transparecy
+		WinSet, Transparent, 255, ahk_id %winHandle% ; transparecyX
 	}
 }
 if (flag = 0)
@@ -196,27 +224,7 @@ if (flag = 0)
 
 
 ^+u:: ;Topleft
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	SetTitleMatchMode, 2
 	WinActivate, ahk_id %winHandle%
 	WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
@@ -258,27 +266,7 @@ if (flag = 0)
 
 
 ^+j:: ;Bottomleft
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	SetTitleMatchMode, 2
 	WinActivate, ahk_id %winHandle%
 	WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
@@ -319,27 +307,7 @@ if (flag = 0)
 	return
 
 ^+i:: ;Topright
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	SetTitleMatchMode, 2
 	WinActivate, ahk_id %winHandle%
 	WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
@@ -380,27 +348,7 @@ if (flag = 0)
 	return
 
 ^+k:: ;Bottomright
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	SetTitleMatchMode, 2
 	WinActivate, ahk_id %winHandle%
 	WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
@@ -441,34 +389,7 @@ if (flag = 0)
 	return
 
 ^+t:: ;Transparecy
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle5 := WinExist(SnapWindowOpenURLTitle)
-	WinGetTitle, tWindow5, ahk_id %winHandle5%
-	IfWinExist %tWindow5%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	transparecy := (TransparecyLevel/255)*100
 	Gui, Add, Slider, w500 vSlider gMySlider2 ToolTip, %transparecy%
 	Gui, Add, Button, Default w50 gMySlider1, OK
@@ -492,34 +413,7 @@ if (flag = 0)
 		return
 	return
 ^+o:: ;ChangeTargetWindow
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle5 := WinExist(SnapWindowOpenURLTitle)
-	WinGetTitle, tWindow5, ahk_id %winHandle5%
-	IfWinExist %tWindow5%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	winlist:=[]
 	WinGet, Win, List
 	Loop, %window_%
@@ -555,34 +449,7 @@ if (flag = 0)
 		Gui,Destroy
 		return
 ^+s:: ;ChangeSize
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle5 := WinExist(SnapWindowOpenURLTitle)
-	WinGetTitle, tWindow5, ahk_id %winHandle5%
-	IfWinExist %tWindow5%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	SetTitleMatchMode, 2
 	WinActivate, ahk_id %winHandle%
 	WinGetPos, X, Y, Width, Height, ahk_id %winHandle%
@@ -711,6 +578,7 @@ if (flag = 0)
 		Gui,Destroy
 		return
 ^+f:: ;ToggleFullscreen
+	DestroyAllGUIs()
 	if (Fullscreen = false)
 	{
 		SetTitleMatchMode, 2
@@ -761,34 +629,7 @@ if (flag = 0)
 	{
 		Gosub ^+v
 	}
-	SetTitleMatchMode, 2
-	winHandle2 := WinExist(SnapWindowTitle)
-	WinGetTitle, tWindow2, ahk_id %winHandle2%
-	IfWinExist %tWindow2%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle3 := WinExist(SnapWindowTransparecyTitle)
-	WinGetTitle, tWindow3, ahk_id %winHandle3%
-	IfWinExist %tWindow3%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle4 := WinExist(SnapWindowSizeTitle)
-	WinGetTitle, tWindow4, ahk_id %winHandle4%
-	IfWinExist %tWindow4%
-	{
-		Gui,Destroy
-	}
-	SetTitleMatchMode, 2
-	winHandle5 := WinExist(SnapWindowOpenURLTitle)
-	WinGetTitle, tWindow5, ahk_id %winHandle5%
-	IfWinExist %tWindow5%
-	{
-		Gui,Destroy
-	}
+	DestroyAllGUIs()
 	Gui, Add, Edit, w300 vMyURL, URL
 	Gui, Add, Button, Default w50 gMyEdit, Ok
 	Gui, Show,, %SnapWindowOpenURLTitle%
@@ -801,6 +642,7 @@ if (flag = 0)
 		return
 	
 ^+h:: ;Help
+	DestroyAllGUIs()
 	HelpBox()
 	return
 ^+x:: ;Exit
