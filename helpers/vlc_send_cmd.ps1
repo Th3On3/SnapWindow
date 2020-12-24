@@ -75,4 +75,4 @@ Function Receive-TCPMessage {
         }
     }
 }
-Send-TCPMessage -Port 8889 -Endpoint 127.0.0.1 -message "$args[0]"
+Send-TCPMessage -Port 8889 -Endpoint 127.0.0.1 -message "$args"
