@@ -24,10 +24,10 @@ catch [System.Management.Automation.ActionPreferenceStopException] {
 
 
 $path = $null
-$path = (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC*').InstallLocation
+$path = (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC*')[0].InstallLocation
 
 if ($path -eq $null) {
-    $path = (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC.Universal*').InstallLocation
+    $path = (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, InstallLocation | Where-Object DisplayName -Like '*VLC*')[0].InstallLocation
 }
 
 if ($path -eq $null) {
